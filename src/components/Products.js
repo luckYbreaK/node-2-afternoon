@@ -22,8 +22,20 @@ class Products extends Component {
     }
 
     render() {
+        let mappedProducts = this.state.products.map( (product, i) => {
+            return(
+                <div key={i}>
+                    <p>{product.name}</p>
+                    <p>{product.description}</p>
+                    <p>{product.price}</p>
+                </div>
+            );
+        })
         return(
-            <h1>Product Page!</h1>
+            <div>
+                <h1>Product Page!</h1>
+                {mappedProducts}    
+            </div>
         );
     }
 }
